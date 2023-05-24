@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Menu Principal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        .landing {
+            width: 100vw;
+            height: 100vh;
+            background-image: url('https://res.cloudinary.com/tempest/image/upload/c_limit,cs_srgb,dpr_1.0,q_80,w_10000/MTM2NDU2MTg4MTgyMTQ0NjA3.jpg');
+            background-size: cover;
+        }
+
+        .button_container {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            background-image: url(../menu-principal-e/img/icon.PNG);
+            transform: translateX(-50%) translateY(-50%);
+            cursor: pointer;
+            z-index: 1;
+            transition: all 0.5s ease;
+        }
+
+            .button_container span {
+                position: absolute;
+                height: 3px;
+                width: 100%;
+            }
+
+
+        .middle {
+            top: 15px;
+        }
+
+        .bottom {
+            top: 30px;
+        }
+
+        .button_container.active {
+            background-image: url(../menu-principal-e/img/close.png);
+            width: 50px;
+            height: 50px;
+        }
+
+        .menu {
+            opacity: 0;
+            width: 0px;
+            height: 0px;
+            border-radius: 50%;
+            background: #E8E8E8;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            position: fixed;
+            transition: all .5s ease;
+        }
+
+            .menu.open {
+                opacity: 1;
+                width: 500px;
+                height: 500px;
+            }
+
+        .it {
+            color: #2f0f26;
+            text-align: center;
+            text-decoration: none;
+            font-family: fontawesome;
+            font-size: 30px;
+            transition: all .5s ease;
+        }
+
+            .it:nth-of-type(1):before {
+                content: "Actualizacion de Datos";
+            }
+
+            .it:nth-of-type(2):before {
+                content: "Registro Academico";
+            }
+
+            .it:nth-of-type(3):before {
+                content: "Consultas Académicas";
+            }
+
+            .it:nth-of-type(4):before {
+                content: "Inscripciones";
+            }
+
+            .it:nth-of-type(5):before {
+                content: "Movimientos Académicos";
+            }
+
+            .it:nth-of-type(1) {
+                position: fixed;
+                top: 20%;
+                left: 50%;
+                transform: translateX(-50%) translateY(-50%);
+            }
+
+            .it:nth-of-type(2) {
+                position: fixed;
+                top: 80%;
+                left: 45%;
+                transform: translateX(-100%) translateY(-50%);
+            }
+
+            .it:nth-of-type(3) {
+                position: fixed;
+                top: 50%;
+                left: 10%;
+                transform: translateX(-50%) translateY(-50%);
+            }
+
+            .it:nth-of-type(4) {
+                position: fixed;
+                top: 50%;
+                left: 90%;
+                transform: translateX(-50%) translateY(-50%);
+            }
+
+            .it:nth-of-type(5) {
+                position: fixed;
+                top: 80%;
+                left: 80%;
+                transform: translateX(-50%) translateY(-50%);
+            }
+    
+            html, body {
+    margin: 0;
+    padding: 0;
+    background: #f5f5f5;
+}
+
+/* Estilos para la barra de herramientas superior */
+.toolbar {
+    height: 50px;
+    background-color: #18122B;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 20px;
+}
+
+.username {
+    font-size: 18px;
+    margin-right: 20px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    background-color: transparent;
+    color: white;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Estilos para el menú radial */
+.menu-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.profile-button{
+    border-top: 2px solid red;
+  border-right: 3px dotted blue;
+  border-bottom: 4px dashed green;
+  border-left: 1px double yellow;
+}
+
+.img-src {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.options-buttons {
+    width: 300px;
+    height: 300px;
+    border-top: 2px solid red;
+    border-right: 3px dotted blue;
+    border-bottom: 4px dashed green;
+    border-left: 1px double yellow;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    cursor: pointer;
+}
+
+.btn1 {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    object-fit: cover;
+    position: absolute;
+    transform: translateX(-50%) translateY(-125%);
+}
+
+.btn2 {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-125%) translateY(-60%);
+}
+
+.btn3 {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translateX(25%) translateY(-60%);
+}
+
+.btn4 {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    object-fit: cover;
+    position: absolute;
+    transform: translateX(-75%) translateY(25%);
+}
+
+.btn5 {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    object-fit: cover;
+    position: absolute;
+    transform: translateX(-25%) translateY(25%);
+}
+
+.menu-options {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    cursor: pointer;
+}
+
+    .menu-options:nth-child(1) {
+        top: 50%; /* Distancia desde arriba */
+        left: 50%; /* Distancia desde la izquierda */
+        transform: translate(-50%, -150%); /* Ajuste de posición */
+    }
+
+    .menu-options:nth-child(2) {
+        top: 50%; /* Distancia desde arriba */
+        left: 50%; /* Distancia desde la izquierda */
+        transform: translate(90%, -50%); /* Ajuste de posición */
+    }
+
+    .menu-options:nth-child(3) {
+        top: 50%; /* Distancia desde arriba */
+        left: 50%; /* Distancia desde la izquierda */
+        transform: translate(50%, 90%); /* Ajuste de posición */
+    }
+
+    .menu-options:nth-child(4) {
+        top: 50%; /* Distancia desde arriba */
+        left: 50%; /* Distancia desde la izquierda */
+        transform: translate(-150%, -50%); /* Ajuste de posición */
+    }
+
+    .menu-options:nth-child(5) {
+        top: 50%; /* Distancia desde arriba */
+        left: 50%; /* Distancia desde la izquierda */
+        transform: translate(-50%, 150%); /* Ajuste de posición */
+    }
+
+        .menu-options li a {
+            display: block;
+            padding: 10px;
+            background-color: #635985;
+            color: #333;
+            border-radius: 50%;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+/* Estilos para los menús desplegables */
+.submenu {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.menu-options li:hover .submenu {
+    display: block;
+}
+
+.submenu a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+    .submenu a:hover {
+        background-color: #f1f1f1;
+    }
+
+    nav {
+  display: block;
+  position: fixed;
+  width: 500px;
+  height: 500px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  transform: translate3d(25px, -25px, 0);
+  transition: transform 0.5s cubic-bezier(0.3, 1.4, 0.5, 0.9);
+}
+nav.open {
+  transform: translate3d(0, 0, 0);
+}
+nav.top-right {
+  top: -140px;
+  right: -140px;
+}
+
+.disc {
+  position: absolute;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  font: 25px Alegreya Sans, sans-serif;
+  line-height: 40px;
+  padding-top: 10px;
+  border-radius: 250px;
+  transform: scale3d(0.5, 0.5, 0.5) rotate3d(0, 0, 1, 190deg);
+  pointer-events: none;
+  opacity: 0;
+  cursor: pointer;
+  transition: transform 0.5s cubic-bezier(0.3, 1.4, 0.5, 0.9), opacity 0.5s;
+}
+.disc div {
+  transform: rotate(180deg);
+}
+.open .disc {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+.l1 {
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background: tomato;
+  transition-delay: 0s;
+}
+.open .l1 {
+  transition-delay: 0s;
+  transform: scale3d(1, 1, 1) rotate3d(0, 0, 1, 190deg);
+  opacity: 1;
+}
+    .open .l1:hover {
+        background: rgba(255, 192, 14, 0.9);
+        color: tomato;
+        transition-delay: 0s;
+    }
+    .open .l1:active {
+        background: rgba(255, 192, 14, 0.5);
+        color: tomato;
+    }
+.open .l1.toggle {
+  transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, 10deg);
+}
+
+.l2 {
+  top: 50px;
+  left: 50px;
+  right: 50px;
+  bottom: 50px;
+  background: #ff7a39;
+  transition-delay: 0.1s;
+}
+.open .l2 {
+  transition-delay: 0.1s;
+  transform: scale3d(1, 1, 1) rotate3d(0, 0, 1, 190deg);
+  opacity: 1;
+}
+    .open .l2:hover {
+        background: rgba(255, 122, 57, 0.9);
+        color: #ff7a39;
+        transition-delay: 0s;
+    }
+    .open .l2:active {
+        background: rgba(255, 122, 57, 0.5);
+        color: #ff7a39;
+    }
+.open .l2.toggle {
+  transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, 10deg);
+}
+
+.l3 {
+  top: 100px;
+  left: 100px;
+  right: 100px;
+  bottom: 100px;
+  background: #ff912b;
+  transition-delay: 0.2s;
+}
+.open .l3 {
+  transition-delay: 0.2s;
+  transform: scale3d(1, 1, 1) rotate3d(0, 0, 1, 190deg);
+  opacity: 1;
+}
+    .open .l3:hover {
+        background: rgba(255, 145, 43, 0.9);
+        color: #ff912b;
+        transition-delay: 0s;
+    }
+    .open .l3:active {
+        background: rgba(255, 145, 43, 0.5);
+        color: #ff912b;
+    }
+.open .l3.toggle {
+  transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, 10deg);
+}
+
+.l4 {
+  top: 150px;
+  left: 150px;
+  right: 150px;
+  bottom: 150px;
+  background: #ffa91c;
+  transition-delay: 0.3s;
+}
+.open .l4 {
+  transition-delay: 0.3s;
+  transform: scale3d(1, 1, 1) rotate3d(0, 0, 1, 190deg);
+  opacity: 1;
+}
+    .open .l4:hover {
+        background: rgba(255, 169, 28, 0.9);
+        color: #ffa91c;
+        transition-delay: 0s;
+    }
+    .open .l4:active {
+        background: rgba(255, 169, 28, 0.5);
+        color: #ffa91c;
+    }
+.open .l4.toggle {
+  transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, 10deg);
+}
+
+.l5 {
+  top: 200px;
+  left: 200px;
+  right: 200px;
+  bottom: 200px;
+  background: #ffc00e;
+  transition-delay: 0.4s;
+}
+.open .l5 {
+  transition-delay: 0.4s;
+  transform: scale3d(1, 1, 1) rotate3d(0, 0, 1, 190deg);
+  opacity: 1;
+}
+    .open .l5:hover {
+        background: rgba(255, 192, 14, 0.9);
+        color: #ffc00e;
+        transition-delay: 0s;
+    }
+    .open .l5:active {
+        background: rgba(255, 192, 14, 0.5);
+        color: #ffc00e;
+    }
+.open .l5.toggle {
+  transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, 10deg);
+}
+
+.toggle {
+  line-height: 100px;
+  padding: 0;
+  width: 100px;
+  background: gold;
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+  transition-delay: 0s;
+}
+.open .toggle {
+  transform: rotate3d(0, 0, 1, 0deg);
+}
+.toggle:hover {
+    background: rgba(255, 215, 0, 0.9);
+    text-decoration: underline;
+}
+.toggle:active {
+    background: rgba(255, 215, 0, 0.5);
+    color: rgba(255, 215, 0, 0.5);
+    transform: scale(0.9);
+    transition-duration: 0s;
+}
+    </style>
+    <script>
+        window.onload = function () {
+            $('.button_container').click(function () {
+                $('.button_container').toggleClass('active');
+                $('.menu').toggleClass('open');
+            });
+        };
+    </script>
+</head>
+<body>
+    <form id="form2" runat="server">
+
+        <div class="toolbar">
+            <div class="username">Nombre del Usuario</div>
+            <div class="dropdown">
+                <button class="dropbtn">Opciones <i class="fas fa-chevron-down"></i></button>
+                <div class="dropdown-content">
+                    <a href="#">Cerrar Sesión</a>
+                    <a href="#">Otra Opción</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="button_container">
+            <span class="top"></span>
+            <span class="middle"></span>
+            <span class="bottom"></span>
+        </div>
+
+        <div class="menu">
+            <a href="#" class="it"><span></span></a>
+            <a href="#" class="it"><span></span></a>
+            <a href="#" class="it"><span></span></a>
+            <a href="#" class="it"><span></span></a>
+            <a href="#" class="it"><span></span></a>
+        </div>
+    </form>
+</body>
+</html>

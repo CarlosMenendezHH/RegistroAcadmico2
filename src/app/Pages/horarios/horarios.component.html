@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="horarios.component.css">
+</head>
+<body>
+  <div id="container">
+    <div id="titleContainer">
+    <h2 class="titulo">Horarios</h2>
+    </div>
+    
+    <div class="tableContainer">
+      <table class="tabla" border="1">
+        <thead>
+          <tr>
+            <th>ID de Horario</th>
+            <th>Días</th>
+            <th>Turno</th>
+            <th>Hora Inicio</th>
+            <th>Hora Fin</th>
+            <th>Año</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let h of horarios">
+            <td>{{ h.idHorario }}</td>
+            <td>{{ h.dias }}</td>
+            <td>{{ h.turno }}</td>
+            <td>{{ h.horaInicio }}</td>
+            <td>{{ h.horaFin }}</td>
+            <td>{{ h.anio }}</td>
+          </tr>
+          <tbody>
+      </table>
+
+    </div>
+  </div>
+</body>
+<br><br><br>
+</html>

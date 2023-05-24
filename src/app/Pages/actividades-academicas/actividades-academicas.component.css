@@ -1,0 +1,66 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #393053;
+    }
+    
+    h1 {
+    font-size: 3rem;
+    margin: 50px auto;
+    text-align: center;
+    color: #F2F2F2;
+    }
+    
+    table {
+    margin: 0 auto;
+    width: 80%;
+    max-width: 800px;
+    border-collapse: collapse;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    background-color: #F2F2F2;
+    color: #443C68;
+    border-radius: 10px;
+    overflow: hidden;
+    }
+    
+    th {
+    background-color: #635985;
+    color: #F2F2F2;
+    font-size: 1.2rem;
+    padding: 10px;
+    text-align: center;
+    }
+    
+    td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+    }
+    
+    td:hover {
+    background-color: #443C68;
+    color: #F2F2F2;
+    cursor: pointer;
+    }
+    
+    .evento {
+    background-color: #F2C94C;
+    color: #F2F2F2;
+    border-radius: 5px;
+    padding: 5px 10px;
+    }
+    
+    .actividad {
+    background-color: #007FFF;
+    color: #F2F2F2;
+    border-radius: 5px;
+    padding: 5px 10px;
+    }
+    
+    .examen {
+    background-color: #DC3545;
+    color: #F2F2F2;
+    border-radius: 5px;
+    padding: 5px 10px;
+    }

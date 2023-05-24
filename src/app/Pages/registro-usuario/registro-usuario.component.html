@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Registro de Usuarios</title>
+	<link rel="stylesheet" type="text/css" href="registro-usuario.component.css">
+</head>
+<body>
+  <div id="container">
+    <div id="titleContainer">
+    <h2 class="titulo">Registro de Usuarios</h2>
+    </div>
+    <div class="formContainer">
+      <form class="formulario" (submit)="agregarUsuario()">
+        <div class="campo">
+          <label class="etiqueta">Id de Usuario:</label>
+          <input class="entrada" type="number" [(ngModel)]="nuevoUsuario.idUsuario" name="idUsuario" disabled>
+        </div>
+        <div class="campo">
+          <label class="etiqueta">Credencial:</label>
+          <input class="entrada" type="text" [(ngModel)]="nuevoUsuario.credencial" name="credencial">
+        </div>
+        <div class="campo">
+          <label class="etiqueta">Clave:</label>
+          <input class="entrada" type="text" [(ngModel)]="nuevoUsuario.clave" name="clave">
+        </div>
+        <div class="campo">
+          <label class="etiqueta">Id de Rol:</label>
+          <input class="entrada" type="number" [(ngModel)]="nuevoUsuario.rol" name="rol">
+        </div>
+        <div class="campo">
+          <label class="etiqueta">Estado:</label>
+          <select class="entrada" [(ngModel)]="nuevoUsuario.estado" name="estado">
+            <option value="true">true</option>
+            <option value="false">false</option>
+          </select>
+        </div>
+        <div class="botones">
+          <button class="botonForm" type="submit">Agregar</button>
+          <button class="botonForm" type="button" (click)="actualizarUsuario()">Actualizar</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="tableContainer">
+      <table class="tabla" border="1">
+        <thead>
+          <tr>
+            <th>ID de Usuario</th>
+            <th>Credencial</th>
+            <th>Clave</th>
+            <th>Id de Rol</th>
+            <th>Estado</th>
+            <th>Editar</th>
+            <th>Eliminar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let u of Usuarios">
+            <td>{{ u.idUsuario }}</td>
+            <td>{{ u.credencial }}</td>
+            <td>{{ u.clave }}</td>
+            <td>{{ u.idrol }}</td>
+            <td>{{ u.estado }}</td>
+            <td>
+              <button class="boton" (click)="editarUsuario(h)">Editar</button>
+            </td>
+            <td>
+              <button class="boton" (click)="eliminarUsuario(u.idUsuario)">Eliminar</button>
+            </td>
+          </tr>
+          <tbody>
+      </table>
+
+    </div>
+  </div>
+</body>
+<br><br><br>
+</html>

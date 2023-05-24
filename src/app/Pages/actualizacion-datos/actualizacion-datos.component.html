@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Actualizacion de Datos Academicos</title>
+    <style>
+        .container {
+            width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f2f2f2;
+            border-radius: 5px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .form-group input[type="text"],
+        .form-group select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .form-group input[type="submit"] {
+            width: auto;
+            padding: 8px 20px;
+            background-color: #393053;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="container">
+            <h2>Actualizacion de Datos Academicos</h2>
+            <div class="form-group">
+                <label for="txtCarnet">Carnet:</label>
+                <input type="text" id="txtCarnet" runat="server" />
+            </div>
+            <div class="form-group">
+                <label for="txtNombres">Nombres:</label>
+                <input type="text" id="txtNombres" runat="server" />
+            </div>
+            <div class="form-group">
+                <label for="txtApellidos">Apellidos:</label>
+                <input type="text" id="txtApellidos" runat="server" />
+            </div>
+            <div class="form-group">
+                <label for="txtFechaNacimiento">Fecha de Nacimiento:</label>
+                <input type="text" id="txtFechaNacimiento" runat="server" />
+            </div>
+            <div class="form-group">
+                <label for="txtDireccion">Dirección:</label>
+                <input type="text" id="txtDireccion" runat="server" />
+            </div>
+            <div class="form-group">
+                <label for="txtPais">País:</label>
+                <input type="text" id="txtPais" runat="server" />
+            </div>
+            <div class="form-group">
+                <label for="txtDepartamento">Departamento:</label>
+                <input type="text" id="txtDepartamento" runat="server" />
+            </div>
+            <div class="form-group">
+                <label for="txtMunicipio">Municipio:</label>
+                <input type="text" id="txtMunicipio" runat="server" />
+            </div>
+            <div class="form-group">
+                <label for="txtCiudad">Ciudad:</label>
+                <input type="text" id="txtCiudad" runat="server" />
+            </div>
+            <div class="form-group">
+                <label for="txtCorreo">Correo:</label>
+                <input type="text" id="txtCorreo" runat="server" />
+            </div>
+            <div class="form-group">
+                <label for="txtTelefonoFijo">Teléfono Fijo:</label>
+                <input type="text" id="txtTelefonoFijo" runat="server" />
+            </div>
+            <div class="form-group">
+                <label for="txtTelefonoMovil">Teléfono Móvil:</label>
+                <input type="text" id="txtTelefonoMovil" runat="server" />
+            </div>
+            <div class="form-group">
+                <label for="txtInstitucionBachillerato">Institución de Bachillerato:</label>
+                <input type="text" id="txtInstitucionBachillerato" runat="server" />
+            </div>
+            <div class="form-group">
+                <label for="txtTituloObtenido">Título Obtenido:</label>
+                <input type="text" id="txtTituloObtenido" runat="server" />
+            </div>
+            <div class="form-group">
+                <label for="txtNivelAcademico">Nivel Académico:</label>
+                <input type="text" id="txtNivelAcademico" runat="server" />
+            </div>
+            <div class="form-group">
+                <label for="txtAnioTitulo">Año del Título:</label>
+                <input type="text" id="txtAnioTitulo" runat="server" />
+            </div>
+            <div class="form-group">
+                <label for="chkEstatusLaboral">Estatus Laboral:</label>
+                <input type="checkbox" id="chkEstatusLaboral" runat="server" />
+            </div>
+            <div class="form-group">
+                <label for="txtLugarTrabajo">Lugar de Trabajo:</label>
+                <input type="text" id="txtLugarTrabajo" runat="server" />
+            </div>
+            <div class="form-group">
+                <label for="chkEnfermedad">Enfermedad:</label>
+                <input type="checkbox" id="chkEnfermedad" runat="server" />
+            </div>
+            <div class="form-group">
+                <label for="txtEstatusTratamiento">Tratamiento:</label>
+                <input type="text" id="txtEstatusTratamiento" runat="server" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Actualizar" runat="server" />
+            </div>
+        </div>
+    </form>
+</body>
+</html>

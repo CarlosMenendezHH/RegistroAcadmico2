@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Notas de Estudiante</title>
+	<link rel="stylesheet" href="notas-modificar.component.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+	<h1>Notas de Estudiante</h1>
+	<table>
+		<thead>
+			<tr>
+				<th>Curso</th>
+				<th>Nota</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Matemáticas</td>
+				<td contenteditable="true">9.0</td>
+			</tr>
+			<tr>
+				<td>Ciencias</td>
+				<td contenteditable="true">8.5</td>
+			</tr>
+			<tr>
+				<td>Lenguaje</td>
+				<td contenteditable="true">7.0</td>
+			</tr>
+			<tr>
+				<td>Historia</td>
+				<td contenteditable="true">6.5</td>
+			</tr>
+		</tbody>
+	</table>
+	<button id="guardar">Guardar cambios</button>
+	<script>
+		const guardarBtn = document.getElementById("guardar");
+		const celdas = document.querySelectorAll("td[contenteditable='true']");
+
+		// Guardar los cambios en el almacenamiento local al hacer clic en el botón "Guardar cambios"
+		guardarBtn.addEventListener("click", function() {
+			celdas.forEach(function(celda) {
+				localStorage.setItem(celda.parentElement.rowIndex + "-" + celda.cellIndex, celda.innerText);
+			});
+			alert("Los cambios han sido guardados.");
+		});
+
+		// Cargar los valores de las celdas desde el almacenamiento local
+		window.onload = function() {
+			celdas.forEach(function(celda) {
+				const valor = localStorage.getItem(celda.parentElement.rowIndex + "-" + celda.cellIndex);
+				if (valor) {
+					celda.innerText = valor;
+				}
+			});
+		};
+	</script>
+</body>
+</html>

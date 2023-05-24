@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Solicitud Nuevo Ingreso</title>
+	<link rel="stylesheet" type="text/css" href="css/solicitudNuevoIngreso.css">
+</head>
+<body>
+  <div class="containerBase">
+  	<header class="superior">
+  		<div class="title">
+  			<h1>Solicitud Nuevo Ingreso</h1>
+  		</div>
+  		<div class="userImage">
+  			<img src="img/foto.png" alt="Img no disponible">
+  		</div>
+  	</header>
+  	<div class="box">
+			<form autocomplete="off">
+				<div class="title">
+		  			<h2>Datos Generales</h2>
+		  		</div>
+				<div class="boxSection">
+					<div class="inputBox">
+						<input type="text" required="required">
+						<span>Carnet</span>
+						<i></i>
+					</div>
+					<div class="inputBox">
+						<input type="text" required="required">
+						<span>Nombres</span>
+						<i></i>
+					</div>
+					<div class="inputBox">
+						<input type="text" required="required">
+						<span>Apellidos</span>
+						<i></i>
+					</div>
+					<div class="inputBox fijo">
+						<input type="date" required="required">
+						<span>Fecha de Nacimiento</span>
+						<i></i>
+					</div>
+					<div class="inputBox">
+						<input type="text" required="required">
+						<span>Dirección</span>
+						<i></i>
+					</div>
+					<div class="inputBox fijo display">
+						<span>Nacionalidad</span>
+						<i></i>
+						<select class="selectOption">
+							<option class="option">Selecciona una opción</option>
+							<option class="option">Salvadoreña</option>
+							<option class="option">Extranjera</option>
+						</select>
+					</div>
+					<div class="inputBox fijo display">
+						<span>Departamento</span>
+						<select>
+							<option>Selecciona una opción</option>
+							<option>San Salvador</option>
+							<option>Jan Miguel</option>
+						</select>
+						<i></i>
+					</div>
+					<div class="inputBox fijo display">
+						<span>Municipio</span>
+						<i></i>
+						<select>
+							<option>Selecciona una opción</option>
+							<option>Apopa</option>
+							<option>San Juan Tepezontes</option>
+						</select>
+					</div>
+					<div class="inputBox fijo display">
+						<span>Tipo de Documento</span>
+						<select>
+							<option>Selecciona una opción</option>
+							<option>DUI</option>
+							<option>NIT</option>
+							<option>Pasaporte</option>
+						</select>
+						<i></i>
+					</div>
+					<div class="inputBox">
+						<input type="number" required="required">
+						<span>N. de Documento</span>
+						<i></i>
+					</div>
+					<div class="inputBox">
+						<input type="email" required="required">
+						<span>Correo</span>
+						<i></i>
+					</div>
+					<div class="inputBox">
+						<input type="number" required="required">
+						<span>Teléfono Móvil</span>
+						<i></i>
+					</div>
+					<div class="inputBox">
+						<input type="number" required="required">
+						<span>Teléfono Fijo</span>
+						<i></i>
+					</div>
+				</div>
+				<br><br>
+
+				<div class="title">
+		      <h2>Institución de Procedencia</h2>
+		    </div>
+		    <div class="boxSection">
+		      <div class="inputBox">
+		        <input type="text" required="required">
+		        <span>Institución</span>
+		        <i></i>
+		      </div>
+		      <div class="inputBox">
+		        <input type="text" required="required">
+		        <span>Nivel Académico</span>
+		        <i></i>
+		      </div>
+		      <div class="inputBox">
+		        <input type="text" required="required">
+		        <span>Titulo Obtenido</span>
+		        <i></i>
+		      </div>
+		      <div class="inputBox">
+		        <input type="number" required="required">
+		        <span>Año de Titulación</span>
+		        <i></i>
+		      </div>
+		    </div>
+		    <br><br>
+		        
+		    <div class="title">
+		      <h2>Datos Laborales</h2>
+		    </div>
+		    <div class="boxSection">
+		      <div class="inputBox">
+		        <br><br>
+		        <span class="spanBlack">¿Trabaja Actualmente?</span>
+		        <label>
+            	<input type="radio" class="optionRadio" name="optionJob" value="No"> No
+            	<input type="radio" class="optionRadio" name="optionJob" value="Si"> Sí
+        		</label>
+		      </div>
+		      <div class="inputBox">
+		        <input type="text" required="required">
+		        <span>Lugar de Trabajo</span>
+		        <i></i>
+		      </div>
+		      <div class="inputBox">
+		        <input type="text" required="required">
+		        <span>Teléfono</span>
+		        <i></i>
+		      </div>
+		    </div>
+		    <br><br>
+		        
+		    <div class="title">
+		      <h2>Datos Clínicos</h2>
+		    </div>
+		    <div class="boxSection">
+		      <div class="inputBox">
+		      	<br><br>
+		        <span class="spanBlack">¿Posee alguna enfermedad?</span>
+		        <label>
+            	<input type="radio" class="optionRadio" name="optionDisease" value="No"> No
+            	<input type="radio" class="optionRadio" name="optionDisease" value="Si"> Sí 
+        		</label>
+		      </div>
+		      <div class="inputBox">
+		        <input type="text" required="required">
+		        <span>Enfermedad</span>
+		        <i></i>
+		      </div>
+		      <div class="inputBox">
+		      	<br><br>
+		        <span class="spanBlack">¿Necesita Tratamiento?</span>
+		        <label>
+            	<input type="radio" class="optionRadio" name="optionTreatment" value="No"> No
+            	<input type="radio" class="optionRadio" name="optionTreatment" value="Si"> Sí
+        		</label>
+		      </div>
+		      <div class="inputBox">
+		        <input type="text" required="required">
+		        <span>Medicamentos</span>
+		        <i></i>
+		      </div>
+		    </div>
+		    <br><br>
+		        
+		    <div class="title">
+		      <h2>Contacto de Emergencia</h2>
+		      <br>
+		    </div>
+		    <div class="boxSection">
+		      <div class="inputBox">
+		        <input type="text" required="required">
+		        <span>Nombre</span>
+		        <i></i>
+		      </div>
+		    	<div class="inputBox">
+		      	<input type="text" required="required">
+		        <span>Teléfono</span>
+		        <i></i>
+		      </div>
+		    	<div class="inputBox">
+		        <input type="text" required="required">
+		        <span>Dirección</span>
+		        <i></i>
+		      </div>
+		    </div>
+		    <br>
+		    <div class="botones">
+			    <button class="boton">Guardar</button>
+			    <button class="boton">Modificar</button>
+			    <button class="boton">Cancelar</button>
+		  	</div>
+			</form>
+		</div>
+  </div>
+  <br><br><br><br>
+</body>
+</html>
