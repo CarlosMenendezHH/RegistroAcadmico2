@@ -44,9 +44,10 @@
         <div class="calendar">
             <h2 class="calendar-header">Calendario de Actividades</h2>
             <div class="calenda">
-                <asp:Calendar ID="CalendarControl" runat="server" OnDayRender="CalendarControl_DayRender" OnSelectionChanged="CalendarControl_SelectionChanged">
-                    <DayStyle CssClass="calendar-day" />
-                </asp:Calendar>
+                <mat-calendar id="CalendarControl" (dateClass)="CalendarControl_DayRender($event)" (selectedChange)="CalendarControl_SelectionChanged($event)">
+                    <mat-calendar-header></mat-calendar-header>
+                    <mat-calendar-content></mat-calendar-content>
+                </mat-calendar>
             </div>
             <div id="DivDescription" runat="server" class="description-popup" style="display: none;"></div>
         </div>
