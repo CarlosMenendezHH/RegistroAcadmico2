@@ -1,1 +1,182 @@
-<p>inscripcion-ciclo works!</p>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inscripción de Ciclo</title>
+  <style>
+    body {
+      background-color: #635985;
+      color: #fff;
+      font-family: Arial, sans-serif;
+    }
+    
+    h1 {
+      color: #18122B;
+    }
+    
+    h2 {
+      color: #393053;
+    }
+    
+    .ciclos-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    
+    .ciclo {
+      flex-basis: calc(20% - 20px);
+      padding: 0 10px;
+    }
+    
+    ul {
+      list-style-type: none;
+      padding-left: 20px;
+    }
+    
+    li {
+      margin-bottom: 10px;
+    }
+    
+    button {
+      background-color: #393053;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Inscripción de Ciclo</h1>
+  <h1>Elija Ciclo que desea incribir</h1>
+  
+  <div class="ciclos-container">
+    <div class="ciclo">
+      <h2>Ciclo 1</h2>
+      <ul>
+        <li>Materia 1</li>
+        <li>Materia 2</li>
+        <li>Materia 3</li>
+        <li>Materia 4</li>
+        <li>Materia 5</li>
+      </ul>
+      <button onclick="inscribirCiclo(1)">Inscribir Ciclo 1</button>
+    </div>
+    
+    <div class="ciclo">
+      <h2>Ciclo 2</h2>
+      <ul>
+        <li>Materia 6</li>
+        <li>Materia 7</li>
+        <li>Materia 8</li>
+        <li>Materia 9</li>
+        <li>Materia 10</li>
+      </ul>
+      <button onclick="inscribirCiclo(2)">Inscribir Ciclo 2</button>
+    </div>
+    
+    <div class="ciclo">
+      <h2>Ciclo 3</h2>
+      <ul>
+        <li>Materia 11</li>
+        <li>Materia 12</li>
+        <li>Materia 13</li>
+        <li>Materia 14</li>
+        <li>Materia 15</li>
+      </ul>
+      <button onclick="inscribirCiclo(3)">Inscribir Ciclo 3</button>
+    </div>
+    
+    <div class="ciclo">
+      <h2>Ciclo 4</h2>
+      <ul>
+        <li>Materia 16</li>
+        <li>Materia 17</li>
+        <li>Materia 18</li>
+        <li>Materia 19</li>
+        <li>Materia 20</li>
+      </ul>
+      <button onclick="inscribirCiclo(4)">Inscribir Ciclo 4</button>
+    </div>
+    
+    <div class="ciclo">
+      <h2>Ciclo 5</h2>
+      <ul>
+        <li>Materia 21</li>
+        <li>Materia 22</li>
+        <li>Materia 23</li>
+        <li>Materia 24</li>
+        <li>Materia 25</li>
+      </ul>
+      <button onclick="inscribirCiclo(5)">Inscribir Ciclo 5</button>
+    </div>
+    
+    <div class="ciclo">
+      <h2>Ciclo 6</h2>
+      <ul>
+        <li>Materia 26</li>
+        <li>Materia 27</li>
+        <li>Materia 28</li>
+        <li>Materia 29</li>
+        <li>Materia 30</li>
+      </ul>
+      <button onclick="inscribirCiclo(6)">Inscribir Ciclo 6</button>
+    </div>
+    
+    <div class="ciclo">
+      <h2>Ciclo 7</h2>
+      <ul>
+        <li>Materia 31</li>
+        <li>Materia 32</li>
+        <li>Materia 33</li>
+        <li>Materia 34</li>
+        <li>Materia 35</li>
+      </ul>
+      <button onclick="inscribirCiclo(7)">Inscribir Ciclo 7</button>
+    </div>
+    
+    <div class="ciclo">
+      <h2>Ciclo 8</h2>
+      <ul>
+        <li>Materia 36</li>
+        <li>Materia 37</li>
+        <li>Materia 38</li>
+        <li>Materia 39</li>
+      </ul>
+      <button onclick="inscribirCiclo(8)">Inscribir Ciclo 8</button>
+    </div>
+    
+    <div class="ciclo">
+      <h2>Ciclo 9</h2>
+      <ul>
+        <li>Materia 40</li>
+        <li>Materia 41</li>
+        <li>Materia 42</li>
+        <li>Materia 43</li>
+      </ul>
+      <button onclick="inscribirCiclo(9)">Inscribir Ciclo 9</button>
+    </div>
+    
+    <div class="ciclo">
+      <h2>Ciclo 10</h2>
+      <ul>
+        <li>Materia 44</li>
+        <li>Materia 45</li>
+        <li>Materia 46</li>
+        <li>Materia 47</li>
+      </ul>
+      <button onclick="inscribirCiclo(10)">Inscribir Ciclo 10</button>
+    </div>
+  </div>
+
+  <script>
+    function inscribirCiclo(ciclo) {
+      // Aquí puedes agregar la lógica para procesar la inscripción del ciclo seleccionado
+      alert("Inscripción exitosa para el Ciclo " + ciclo);
+    }
+  </script>
+</body>
+</html>

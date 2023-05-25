@@ -1,1 +1,28 @@
-<p>solicitud-cambio-carrera works!</p>
+<h1>Solicitud de Cambio de Carrera</h1>
+<div class="form-container">
+  <form (ngSubmit)="submitForm()" #solicitudForm="ngForm">
+    <div class="form-group">
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" required [(ngModel)]="nombre">
+    </div>
+    <div class="form-group">
+      <label for="correo">Correo electrónico:</label>
+      <input type="email" id="correo" name="correo" required [(ngModel)]="correo">
+    </div>
+    <div class="form-group">
+      <label for="carrera-actual">Carrera actual:</label>
+      <input type="text" id="carrera-actual" name="carrera-actual" required [(ngModel)]="carreraActual">
+    </div>
+    <div class="form-group">
+      <label for="carrera-nueva">Carrera solicitada:</label>
+      <input type="text" id="carrera-nueva" name="carrera-nueva" required [(ngModel)]="carreraNueva">
+    </div>
+    <div class="form-group">
+      <label for="motivo">Motivo de la solicitud:</label>
+      <textarea id="motivo" name="motivo" required [(ngModel)]="motivo"></textarea>
+    </div>
+    <div class="form-group">
+      <button type="submit">Enviar solicitud</button>
+    </div>
+  </form>
+</div>

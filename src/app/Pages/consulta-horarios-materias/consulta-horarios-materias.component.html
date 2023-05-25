@@ -1,1 +1,31 @@
-<p>consulta-horarios-materias works!</p>
+<h1>Inscripción de Carrera</h1>
+
+<form (ngSubmit)="submitForm()" #inscripcionForm="ngForm">
+  <label for="nombre">Nombre:</label>
+  <input type="text" id="nombre" name="nombre" required [(ngModel)]="nombre"/>
+  <br>
+
+  <label for="apellido">Apellido:</label>
+  <input type="text" id="apellido" name="apellido" required [(ngModel)]="apellido"/>
+  <br>
+
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email" required [(ngModel)]="email"/>
+  <br>
+
+  <label for="telefono">Teléfono:</label>
+  <input type="tel" id="telefono" name="telefono" [(ngModel)]="telefono"/>
+  <br>
+
+  <label for="carrera">Carrera:</label>
+  <select id="carrera" name="carrera" required [(ngModel)]="carrera">
+    <option value="">Selecciona una carrera</option>
+    <option value="ingenieria">Ingeniería</option>
+    <option value="Diseño grafico">Diseño grafico</option>
+    <option value="derecho">Derecho</option>
+    <!-- Agrega más opciones de carrera aquí -->
+  </select>
+  <br>
+
+  <input type="submit" value="Inscribirse">
+</form>

@@ -9,7 +9,15 @@ export class SolicitudCambioCarreraComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
+  nombre!: string;
+  correo!: string;
+  carreraActual!: string;
+  carreraNueva!: string;
+  motivo!: string;
+
+  submitForm() {
+    // Aquí puedes agregar la lógica para enviar la solicitud
+    console.log('Solicitud enviada');
   }
 
 }

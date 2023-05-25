@@ -1,1 +1,98 @@
-<p>asignacion-materias-horarios-d works!</p>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asignación de Materias y Horarios a Docentes</title>
+  <style>
+    body {
+      background-color: #635985;
+      color: #fff;
+      font-family: Arial, sans-serif;
+    }
+    
+    h1 {
+      color: #443C68;
+    }
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    
+    th, td {
+      padding: 10px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+    
+    th {
+      background-color: #393053;
+    }
+    
+    #boton-retroceso {
+      background-color: #443C68;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <button id="boton-retroceso" onclick="retroceder()">Retroceder</button>
+  
+  <h1>Asignación de Materias y Horarios a Docentes</h1>
+  
+  <table>
+    <thead>
+      <tr>
+        <th>Docente</th>
+        <th>Materia</th>
+        <th>Horario</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Docente 1</td>
+        <td>Materia A</td>
+        <td>Lunes 9:00 - 11:00</td>
+      </tr>
+      <tr>
+        <td>Docente 2</td>
+        <td>Materia B</td>
+        <td>Martes 14:00 - 16:00</td>
+      </tr>
+      <tr>
+        <td>Docente 3</td>
+        <td>Materia C</td>
+        <td>Miércoles 10:00 - 12:00</td>
+      </tr>
+      <tr>
+        <td>Docente 4</td>
+        <td>Materia D</td>
+        <td>Jueves 9:00 - 11:00</td>
+      </tr>
+      <tr>
+        <td>Docente 5</td>
+        <td>Materia E</td>
+        <td>Viernes 14:00 - 16:00</td>
+      </tr>
+      <tr>
+        <td>Docente 6</td>
+        <td>Materia F</td>
+        <td>Sábado 10:00 - 12:00</td>
+      </tr>
+      <!-- Agrega más filas según sea necesario -->
+    </tbody>
+  </table>
+  
+  <script>
+    function retroceder() {
+      window.history.back();
+    }
+  </script>
+</body>
+</html>

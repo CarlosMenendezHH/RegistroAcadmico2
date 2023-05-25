@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConsultaHorariosMateriasComponent implements OnInit {
 
-  constructor() { }
+  nombre: string | undefined;
+  apellido: string | undefined;
+  email: string | undefined;
+  telefono: string | undefined;
+  carrera: string | undefined;
 
-  ngOnInit(): void {
+  submitForm() {
+    // Aquí puedes agregar la lógica para procesar la inscripción
+    console.log('Formulario enviado');
   }
 
 }

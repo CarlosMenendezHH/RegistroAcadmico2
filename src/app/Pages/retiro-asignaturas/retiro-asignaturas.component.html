@@ -1,1 +1,140 @@
-<p>retiro-asignaturas works!</p>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Retiro de Asignatura</title>
+  <style>
+    body {
+      background-color: #635985;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    h1 {
+      color: #ffffff;
+      background-color: #443C68;
+      padding: 20px;
+      margin: 0;
+    }
+
+    table {
+      width: 100%;
+      background-color: #393053;
+      color: #ffffff;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    th, td {
+      padding: 10px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #18122B;
+    }
+
+    tr:nth-child(even) {
+      background-color: #635985;
+    }
+
+    tr:hover {
+      background-color: #443C68;
+    }
+
+    input[type="submit"] {
+      background-color: #18122B;
+      color: #ffffff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Retiro de Asignatura</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Asignatura</th>
+        <th>Ciclo</th>
+        <th>Nombre del Alumno</th>
+        <th>Email</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Asignatura 1</td>
+        <td>Ciclo 1</td>
+        <td>Nombre 1</td>
+        <td>email1@example.com</td>
+        <td>
+          <form>
+            <input type="hidden" name="asignatura" value="asignatura1">
+            <input type="hidden" name="alumno" value="nombre1">
+            <input type="hidden" name="email" value="email1@example.com">
+            <input type="submit" value="Retirar">
+          </form>
+        </td>
+      </tr>
+      <tr>
+        <td>Asignatura 2</td>
+        <td>Ciclo 1</td>
+        <td>Nombre 2</td>
+        <td>email2@example.com</td>
+        <td>
+          <form>
+            <input type="hidden" name="asignatura" value="asignatura2">
+            <input type="hidden" name="alumno" value="nombre2">
+            <input type="hidden" name="email" value="email2@example.com">
+            <input type="submit" value="Retirar">
+          </form>
+        </td>
+      </tr>
+      <tr>
+      <td>Asignatura 3</td>
+        <td>Ciclo 1</td>
+        <td>Nombre 3</td>
+        <td>email3@example.com</td>
+        <td>
+          <form>
+            <input type="hidden" name="asignatura" value="asignatura3">
+            <input type="hidden" name="alumno" value="nombre3">
+            <input type="hidden" name="email" value="email3@example.com">
+            <input type="submit" value="Retirar">
+          </form>
+      </td>
+    </tr>
+    <tr>
+    <td>Asignatura 4</td>
+      <td>Ciclo 1</td>
+      <td>Nombre 4</td>
+      <td>email3@example.com</td>
+      <td>
+        <form>
+          <input type="hidden" name="asignatura" value="asignatura4">
+          <input type="hidden" name="alumno" value="nombre4">
+          <input type="hidden" name="email" value="email4@example.com">
+          <input type="submit" value="Retirar">
+        </form>
+    </td>
+  </tr>
+  <td>Asignatura 5</td>
+    <td>Ciclo 1</td>
+    <td>Nombre 5</td>
+    <td>email5@example.com</td>
+    <td>
+      <form>
+        <input type="hidden" name="asignatura" value="asignatura5">
+        <input type="hidden" name="alumno" value="nombre5">
+        <input type="hidden" name="email" value="email5@example.com">
+        <input type="submit" value="Retirar">
+      </form>
+    </tbody>
+  </table>
+</body>
+</html>
