@@ -1,0 +1,19 @@
+.estudiante-info {
+    margin-bottom: 20px;
+  }
+  
+  .notas-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .notas-table th,
+  .notas-table td {
+    padding: 8px;
+    border: 1px solid #ddd;
+  }
+  
+  .notas-table th {
+    background-color: #f2f2f2;
+  }
+  

@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
+*{
+	margin: 0;
+	padding: 0;
+	font-size: 15px;
+	font-family: 'poppins', sans-serif;
+}
+
+.container{
+	height: 100%;
+	width: 100%;
+	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./img/fondo.jpg);
+	background-position: center;
+	background-size: cover;
+	position: absolute;
+}
+
+.form-box{
+	top: 100px;
+	width: 380px;
+	height: 460px;
+	position: relative;
+	margin: 6% auto;
+	background: #FFF;
+	padding: 5px;
+	border-radius: 15px;
+	overflow: hidden;
+}
+
+.button-box{
+	height: 40px;
+	width: 300px;
+	margin: 30px auto;
+	position: relative;
+	box-shadow: 0 0 20px 9px #e0e0e0;
+	border-radius: 30px;
+}
+
+.toggle-btn {
+  	padding: 10px 38px;
+  	cursor: pointer;
+  	background: transparent;
+  	border: 0px;
+  	outline: none;
+  	position: relative;
+}
+
+.toggle-btn:focus{
+  	color: white;
+}
+
+#elegir{
+	top: 0;
+	left: 0;
+	position: absolute;
+	width: 150px;
+	height: 100%;
+	background: linear-gradient(to right, rgba(68, 60, 104), rgba(63, 81, 181, 0.7));
+	border-radius: 30px;
+	transition: 0.5s;
+}
+
+.input-group{
+	top: 95px;
+	position: absolute;
+	width: 280px;
+	transition: 0.5s;
+}
+
+.inputBox{
+	position: relative;
+	width: 300px;
+	margin-top: 35px;
+}
+
+.inputBox input{
+	position: relative;
+	width: 100%;
+	padding: 20px 10px 10px;
+	background: transparent;
+	outline: none;
+	box-shadow: none;
+	border: none;
+	color: #23242a;
+	font-size: 1em;
+	letter-spacing: 0.05em;
+	transition: 0.5s;
+	z-index: 10;
+}
+
+.inputBox span{
+	position: absolute;
+	left: 0;
+	top: 5px;
+	padding: 20px 0px 10px;
+	pointer-events: none;
+	font-size: 1em;
+	color: #8f8f8f;
+	letter-spacing: 0.05em;
+	transition: 0.5s;
+}
+
+.inputBox input:valid  ~ span,
+.inputBox input:focus ~ span{
+	color: #635985;
+	transform: translateX(0px) translateY(-34px);
+	font-size: 0.75em;
+}
+
+.inputBox i{
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 2px;
+	background: #c5cae9;
+	border-radius: 4px;
+	overflow: hidden;
+	transition: 0.5s;
+	pointer-events: none;
+	z-index: 9;
+}
+
+.inputBox input:valid  ~ i,
+.inputBox input:focus ~ i{
+	height: 44px;
+}
+
+.submit-btn{
+	width: 85%;
+	padding: 10px 30px;
+	cursor: pointer;
+	display: block;
+	margin: auto;
+	background: linear-gradient(to right, rgba(68, 60, 104), rgba(63, 81, 181, 0.7));
+	border: 0px;
+	outline: none;
+	border-radius: 30px;
+	color: #ffffff;
+}
+
+.check-box{
+	margin: 30px 10px 30px 0;
+}
+
+span{
+	color: #635985;
+	font-size: 12px;
+	bottom: 64px;
+	position: absolute;
+}
+
+#loginAlumno{
+	left: 50px;
+}
+
+#loginDocente{
+	left: 450px;
+}
+
+.error {
+  width: 92%; 
+  margin: 0px auto; 
+  padding: 10px; 
+  border: 1px solid #a94442; 
+  color: #a94442; 
+  background: #f2dede; 
+  border-radius: 5px; 
+  text-align: center;
+}

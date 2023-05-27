@@ -1,47 +1,49 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MenuPrincipalEComponent } from './pages/menu-principal-e/menu-principal-e.component';
-import { GruposComponent } from './pages/grupos/grupos.component';
-import { ActualizacionDatosComponent } from './pages/actualizacion-datos/actualizacion-datos.component';
-import { CalendarioAcademicoComponent } from './pages/calendario-academico/calendario-academico.component';
-import { CambiarContraComponent } from './pages/cambiar-contra/cambiar-contra.component';
-import { NotasComponent } from './pages/notas/notas.component';
-import { RegistroUsuarioComponent } from './pages/registro-usuario/registro-usuario.component';
-import { SolicitudNuevoIngresoComponent } from './pages/solicitud-nuevo-ingreso/solicitud-nuevo-ingreso.component';
-import { LoginComponent } from './pages/login/login.component';
-import { MateriasCarreraComponent } from './pages/materias-carrera/materias-carrera.component';
-import { PensumCarreraComponent } from './pages/pensum-carrera/pensum-carrera.component';
-import { HorariosComponent } from './pages/horarios/horarios.component';
-import { RecuperacionClavesComponent } from './pages/recuperacion-claves/recuperacion-claves.component';
-import { ActividadesAcademicasComponent } from './pages/actividades-academicas/actividades-academicas.component';
-import { NotasModificarComponent } from './pages/notas-modificar/notas-modificar.component';
-import { CarrerasComponent } from './pages/carreras/carreras.component';
-import { TalonarioComponent } from './pages/talonario/talonario.component';
-import { InscripcionAsignaturaHorariosComponent } from './pages/inscripcion-asignatura-horarios/inscripcion-asignatura-horarios.component';
-import { ActualizacionDatosEComponent } from './pages/actualizacion-datos-e/actualizacion-datos-e.component';
-import { InscripcionCarreraComponent } from './pages/inscripcion-carrera/inscripcion-carrera.component';
-import { InscripcionCicloComponent } from './pages/inscripcion-ciclo/inscripcion-ciclo.component';
-import { SolicitudCambioCarreraComponent } from './pages/solicitud-cambio-carrera/solicitud-cambio-carrera.component';
-import { SolicitudCambioPensumComponent } from './pages/solicitud-cambio-pensum/solicitud-cambio-pensum.component';
-import { RetiroAsignaturasComponent } from './pages/retiro-asignaturas/retiro-asignaturas.component';
-import { RetiroCicloComponent } from './pages/retiro-ciclo/retiro-ciclo.component';
-import { ConsultaHorariosMateriasComponent } from './pages/consulta-horarios-materias/consulta-horarios-materias.component';
-import { DocentesComponent } from './pages/docentes/docentes.component';
-import { MateriasComponent } from './pages/materias/materias.component';
-import { CiclosComponent } from './pages/ciclos/ciclos.component';
-import { AsignacionMateriasHorariosDComponent } from './pages/asignacion-materias-horarios-d/asignacion-materias-horarios-d.component';
-import { PlanesEstudioComponent } from './pages/planes-estudio/planes-estudio.component';
-import { HorariosMateriasComponent } from './pages/horarios-materias/horarios-materias.component';
-import { TalonariosComponent } from './pages/talonarios/talonarios.component';
-import { CarnetizacionComponent } from './pages/carnetizacion/carnetizacion.component';
-import { ConsultaHorariosMateriasDoComponent } from './pages/consulta-horarios-materias-do/consulta-horarios-materias-do.component';
-import { NotasModDComponent } from './pages/notas-mod-d/notas-mod-d.component';
-import { EvaluacionesPorcentajesComponent } from './pages/evaluaciones-porcentajes/evaluaciones-porcentajes.component';
-import { CreacionPerfilesAdminComponent } from './pages/creacion-perfiles-admin/creacion-perfiles-admin.component';
+import { MenuPrincipalEComponent } from './Pages/menu-principal-e/components/menu-principal-e.component';
+import { GruposComponent } from './Pages/grupos/components/grupos.component';
+import { ActualizacionDatosComponent } from './Pages/actualizacion-datos/componets/actualizacion-datos.component';
+import { CalendarioAcademicoComponent } from './Pages/calendario-academico/components/calendario-academico.component';
+import { CambiarContraComponent } from './Pages/cambiar-contra/components/cambiar-contra.component';
+import { NotasComponent } from './Pages/notas/components/notas.component';
+import { RegistroUsuarioComponent } from './Pages/registro-usuario/components/registro-usuario.component';
+import { SolicitudNuevoIngresoComponent } from './Pages/solicitud-nuevo-ingreso/components/solicitud-nuevo-ingreso.component';
+import { LoginComponent } from './Pages/login/components/login.component'
+import { MateriasCarreraComponent } from './Pages/materias-carrera/components/materias-carrera.component';
+import { PensumCarreraComponent } from './Pages/pensum-carrera/components/pensum-carrera.component';
+import { HorariosComponent } from './Pages/horarios/components/horarios.component';
+import { RecuperacionClavesComponent } from './Pages/recuperacion-claves/components/recuperacion-claves.component';
+import { ActividadesAcademicasComponent } from './Pages/actividades-academicas/components/actividades-academicas.component';
+import { NotasModificarComponent } from './Pages/notas-modificar/components/notas-modificar.component';
+import { CarrerasComponent } from './Pages/carreras/components/carreras.component';
+import { TalonarioComponent } from './Pages/talonario/components/talonario.component';
+import { InscripcionAsignaturaHorariosComponent } from './Pages/inscripcion-asignatura-horarios/components/inscripcion-asignatura-horarios.component';
+import { ActualizacionDatosEComponent } from './Pages/actualizacion-datos-e/components/actualizacion-datos-e.component';
+import { InscripcionCarreraComponent } from './Pages/inscripcion-carrera/components/inscripcion-carrera.component';
+import { InscripcionCicloComponent } from './Pages/inscripcion-ciclo/components/inscripcion-ciclo.component';
+import { SolicitudCambioCarreraComponent } from './Pages/solicitud-cambio-carrera/components/solicitud-cambio-carrera.component';
+import { SolicitudCambioPensumComponent } from './Pages/solicitud-cambio-pensum/components/solicitud-cambio-pensum.component';
+import { RetiroAsignaturasComponent } from './Pages/retiro-asignaturas/components/retiro-asignaturas.component';
+import { RetiroCicloComponent } from './Pages/retiro-ciclo/components/retiro-ciclo.component';
+import { ConsultaHorariosMateriasComponent } from './Pages/consulta-horarios-materias/components/consulta-horarios-materias.component';
+import { DocentesComponent } from './Pages/docentes/components/docentes.component';
+import { MateriasComponent } from './Pages/materias/components/materias.component';
+import { CiclosComponent } from './Pages/ciclos/components/ciclos.component';
+import { AsignacionMateriasHorariosDComponent } from './Pages/asignacion-materias-horarios-d/components/asignacion-materias-horarios-d.component';
+import { PlanesEstudioComponent } from './Pages/planes-estudio/components/planes-estudio.component';
+import { HorariosMateriasComponent } from './Pages/horarios-materias/components/horarios-materias.component';
+import { CarnetizacionComponent } from './Pages/carnetizacion/components/carnetizacion.component';
+import { ConsultaHorariosMateriasDoComponent } from './Pages/consulta-horarios-materias-do/components/consulta-horarios-materias-do.component';
+import { NotasModDComponent } from './Pages/notas-mod-d/components/notas-mod-d.component';
+import { EvaluacionesPorcentajesComponent } from './Pages/evaluaciones-porcentajes/components/evaluaciones-porcentajes.component';
+import { CreacionPerfilesAdminComponent } from './Pages/creacion-perfiles-admin/components/creacion-perfiles-admin.component';
+import { TalonariosPagosComponent } from './Pages/talonarios-pagos/components/talonarios-pagos.component';
+import { MatCalendarBody } from '@angular/material/datepicker';
 
 @NgModule({
   declarations: [
@@ -78,18 +80,20 @@ import { CreacionPerfilesAdminComponent } from './pages/creacion-perfiles-admin/
     AsignacionMateriasHorariosDComponent,
     PlanesEstudioComponent,
     HorariosMateriasComponent,
-    TalonariosComponent,
     CarnetizacionComponent,
     ConsultaHorariosMateriasDoComponent,
     NotasModDComponent,
     EvaluacionesPorcentajesComponent,
-    CreacionPerfilesAdminComponent
+    CreacionPerfilesAdminComponent,
+    TalonariosPagosComponent,
   ],
   imports: [
+    FormsModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppModule { }

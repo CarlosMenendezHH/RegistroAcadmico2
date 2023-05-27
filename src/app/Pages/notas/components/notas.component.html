@@ -1,0 +1,37 @@
+<h2>Notas Académicas</h2>
+<div class="estudiante-info">
+  <h3>{{ nombreEstudiante }}</h3>
+  <p>Carnet: {{ carnet }}</p>
+  <p>Carrera: {{ carrera }}</p>
+</div>
+
+<table class="notas-table">
+  <thead>
+    <tr>
+      <th>Materia</th>
+      <th>Grupo</th>
+      <th>Laboratorio 1</th>
+      <th>Laboratorio 2</th>
+      <th>Laboratorio 3</th>
+      <th>Laboratorio 4</th>
+      <th>Examen 1</th>
+      <th>Examen 2</th>
+      <th>Examen 3</th>
+      <th>Examen 4</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let nota of notasAcademicas">
+      <td>{{ nota.materia }}</td>
+      <td>{{ nota.grupo }}</td>
+      <td>{{ nota.laboratorio1 }}</td>
+      <td>{{ nota.laboratorio2 }}</td>
+      <td>{{ nota.laboratorio3 }}</td>
+      <td>{{ nota.laboratorio4 }}</td>
+      <td>{{ nota.examen1 }}</td>
+      <td>{{ nota.examen2 }}</td>
+      <td>{{ nota.examen3 }}</td>
+      <td>{{ nota.examen4 }}</td>
+    </tr>
+  </tbody>
+</table>

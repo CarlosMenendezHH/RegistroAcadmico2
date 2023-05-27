@@ -1,0 +1,18 @@
+<div class="calendar">
+    <div class="header">
+      <button (click)="previousMonth()">Anterior</button>
+      <h2>{{ currentMonth }}</h2>
+      <button (click)="nextMonth()">Siguiente</button>
+    </div>
+    <div class="weekdays">
+      <div class="weekday" *ngFor="let weekday of weekdays">{{ weekday }}</div>
+    </div>
+    <div class="days">
+      <div class="day" *ngFor="let day of calendarDays" [class.event]="hasEvent(day)">
+        <span class="number">{{ day.date }}</span>
+        <div class="event-details" *ngIf="hasEvent(day)">
+          <span>{{ day.event }}</span>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,20 @@
+<table>
+    <thead>
+      <tr>
+        <th>Grupo</th>
+        <th>Materia</th>
+        <th>Número de Salón</th>
+        <th>Grado Académico</th>
+        <th>Horario</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let clase of grupos">
+        <td>{{ clase.grupo }}</td>
+        <td>{{ clase.materia }}</td>
+        <td>{{ clase.salon }}</td>
+        <td>{{ clase.grado }}</td>
+        <td>{{ clase.horario }}</td>
+      </tr>
+    </tbody>
+  </table>

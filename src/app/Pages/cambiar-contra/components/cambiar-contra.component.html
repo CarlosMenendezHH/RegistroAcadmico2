@@ -1,0 +1,21 @@
+<div class="container">
+    <h2>Change Password</h2>
+    <div>
+      <span *ngIf="message" class="message">{{ message }}</span>
+    </div>
+    <div>
+      <label for="oldPassword">Old Password:</label>
+      <input type="password" id="oldPassword" [(ngModel)]="oldPassword" />
+    </div>
+    <div>
+      <label for="newPassword">New Password:</label>
+      <input type="password" id="newPassword" [(ngModel)]="newPassword" />
+    </div>
+    <div>
+      <label for="confirmPassword">Confirm Password:</label>
+      <input type="password" id="confirmPassword" [(ngModel)]="confirmPassword" />
+    </div>
+    <div>
+      <button (click)="changePassword()">Change Password</button>
+    </div>
+  </div>

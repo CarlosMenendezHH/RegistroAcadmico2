@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Login</title>
+	<link rel="stylesheet" type="text/css" href="login.component.css">
+</head>
+<body>
+	<div class="container">
+		<div class="form-box">
+			<div class="button-box">
+				<div id="elegir"></div>
+					<button type="button" class="toggle-btn" onclick="loginAlumno()"><b>Estudiante</b></button>
+					<button type="button" class="toggle-btn" onclick="loginDocente()"><b>Docente</b></button>
+				</div>
+			<form id="loginAlumno" class="input-group" method="post" autocomplete="off">
+				<div class="inputBox">
+					<input type="text" required="required" name="Credencial_Estudiante">
+					<span>Credencial del Estudiante</span>
+					<i></i>
+				</div>
+				<div class="inputBox">
+					<input type="password" class="input-field" required id="clave" name="Clave_Estudiante">
+					<span>Clave</span>
+					<i></i>
+				</div>
+				<input type="checkbox" class="check-box" onclick="showPassword(clave)"><span>Ver clave</span>
+				<button type="submit" class="submit-btn" name="Acceder_Estudiante">Acceder</button>
+			</form>
+			<form id="loginDocente" class="input-group" method="post" autocomplete="off">
+				<div class="inputBox">
+					<input type="text" required="required" name="Credencial_Docente">
+					<span>Credencial del Docente</span>
+					<i></i>
+				</div>
+				<div class="inputBox">
+					<input type="password" class="input-field" required id="clave" name="Clave_Docente">
+					<span>Clave</span>
+					<i></i>
+				</div>
+				<input type="checkbox" class="check-box" onclick="showPassword(clave)"><span>Ver clave</span>
+				<button type="submit" class="submit-btn" name="Acceder_Docente">Acceder</button>
+			</form>
+		</div>
+	</div>
+	<script>
+		var x = document.getElementById("loginAlumno");
+		var y = document.getElementById("loginDocente");
+		var z = document.getElementById("elegir");
+
+		function loginAlumno(){
+			x.style.left = "50px";
+			y.style.left = "450px";
+			z.style.left = "0px";
+		}
+
+		function loginDocente(){
+			x.style.left = "-400px";
+			y.style.left = "50px";
+			z.style.left = "150px";
+		}
+
+		function showPassword(input) {
+			if (input.type === "password") {
+				input.type = "text";
+			} else {
+				input.type = "password";
+			}
+		}
+	</script>
+</body>
+</html>
