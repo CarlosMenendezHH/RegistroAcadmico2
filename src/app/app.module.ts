@@ -44,6 +44,13 @@ import { EvaluacionesPorcentajesComponent } from './Pages/evaluaciones-porcentaj
 import { CreacionPerfilesAdminComponent } from './Pages/creacion-perfiles-admin/components/creacion-perfiles-admin.component';
 import { TalonariosPagosComponent } from './Pages/talonarios-pagos/components/talonarios-pagos.component';
 import { MatCalendarBody } from '@angular/material/datepicker';
+import { HttpClientModule } from '@angular/common/http';
+
+const routes: Routes = [
+  { path: '', component: AppComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'menue', component: MenuPrincipalEComponent },
+];
 
 @NgModule({
   declarations: [
@@ -91,9 +98,12 @@ import { MatCalendarBody } from '@angular/material/datepicker';
     FormsModule,
     BrowserModule,
     AppRoutingModule,
+    RouterModule.forRoot(routes),
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  exports: [RouterModule]
 })
 export class AppModule { }

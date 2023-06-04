@@ -1,8 +1,8 @@
 <h2>Notas Académicas</h2>
-<div class="estudiante-info">
-  <h3>{{ nombreEstudiante }}</h3>
-  <p>Carnet: {{ carnet }}</p>
-  <p>Carrera: {{ carrera }}</p>
+<div class="estudiante-info" *ngFor="let estudiante of estudiante">
+  <h3>Nombre: {{ estudiante.nombres }} {{ estudiante.apellidos }}</h3>
+  <p>Carnet: {{ estudiante.carnet }}</p>
+  <p>Carrera: carrera</p>
 </div>
 
 <table class="notas-table">

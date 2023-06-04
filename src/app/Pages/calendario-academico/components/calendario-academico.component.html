@@ -1,18 +1,31 @@
 <div class="calendar">
-    <div class="header">
-      <button (click)="previousMonth()">Anterior</button>
-      <h2>{{ currentMonth }}</h2>
-      <button (click)="nextMonth()">Siguiente</button>
-    </div>
-    <div class="weekdays">
-      <div class="weekday" *ngFor="let weekday of weekdays">{{ weekday }}</div>
-    </div>
-    <div class="days">
-      <div class="day" *ngFor="let day of calendarDays" [class.event]="hasEvent(day)">
-        <span class="number">{{ day.date }}</span>
-        <div class="event-details" *ngIf="hasEvent(day)">
-          <span>{{ day.event }}</span>
-        </div>
-      </div>
-    </div>
+  <h2 class="calendar-header">{{ currentMonth | date:'MMMM yyyy' }}</h2>
+  <div class="calenda">
+    <table>
+      <thead>
+        <tr>
+          <th class="calendar-day">Sun</th>
+          <th class="calendar-day">Mon</th>
+          <th class="calendar-day">Tue</th>
+          <th class="calendar-day">Wed</th>
+          <th class="calendar-day">Thu</th>
+          <th class="calendar-day">Fri</th>
+          <th class="calendar-day">Sat</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let week of weeks">
+          <td *ngFor="let day of week" [ngClass]="{ 'calendar-day': true, 'event-day': hasActivity(day.date) }"
+            (mouseover)="showDescription(day)" (mouseout)="hideDescription()">
+            {{ day.day }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
+  <div class="description-popup" *ngIf="descriptionVisible">
+    {{ description }}
+  </div>
+  <button (click)="previousMonth()">Previous</button>
+  <button (click)="nextMonth()">Next</button>
+</div>

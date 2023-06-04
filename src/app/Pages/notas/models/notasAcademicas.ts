@@ -1,6 +1,7 @@
 export class notasAcademicas {
+    idnotas: number;
     materia: string;
-    grupo: string;
+    grupo: number;
     laboratorio1: string;
     laboratorio2: string;
     laboratorio3: string;
@@ -9,4 +10,6 @@ export class notasAcademicas {
     examen2: string;
     examen3: string;
     examen4: string;
+    estado: boolean;
+    carnet: string;
 }

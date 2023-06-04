@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { actividades } from '../models/Actividades';
+import { CalendarioacademicoService } from '../services/calendarioacademico.service';
 
 interface CalendarDay {
-  date: number;
-  event?: string;
+  date: string;
+  day: number;
 }
 
 @Component({
@@ -10,83 +12,80 @@ interface CalendarDay {
   templateUrl: './calendario-academico.component.html',
   styleUrls: ['./calendario-academico.component.css']
 })
-export class CalendarioAcademicoComponent implements OnInit {
+export class CalendarioAcademicoComponent implements OnInit{
+  currentMonth: Date;
+  weeks: CalendarDay[][] = [];
+  activities: any[] = [];
+  description: string = '';
+  descriptionVisible: boolean = false;
 
+  constructor(private activityService: CalendarioacademicoService) {
+    this.currentMonth = new Date();
+  }
+
+  ngOnInit() {
+    this.loadActivities();
+    this.generateCalendar();
+  }
+
+  loadActivities() {
+    this.activityService.getActivities().subscribe(data => {
+      this.activities = data;
+    });
+  }
+
+  generateCalendar() {
+    this.weeks = [];
+
+    const startDay = new Date(this.currentMonth.getFullYear(), this.currentMonth.getMonth(), 1).getDay();
+    const endDay = new Date(this.currentMonth.getFullYear(), this.currentMonth.getMonth() + 1, 0).getDate();
+    const prevMonth = new Date(this.currentMonth.getFullYear(), this.currentMonth.getMonth(), 0);
+    const nextMonth = new Date(this.currentMonth.getFullYear(), this.currentMonth.getMonth() + 2, 0);
+
+    for (let i = 0; i < startDay + endDay; i++) {
+      const date = new Date();
+
+      if (i >= startDay && i < startDay + endDay) {
+        date.setFullYear(this.currentMonth.getFullYear(), this.currentMonth.getMonth(), i - startDay + 1);
+      } else if (i < startDay) {
+        date.setFullYear(prevMonth.getFullYear(), prevMonth.getMonth(), prevMonth.getDate() - startDay + i + 1);
+      } else {
+        date.setFullYear(nextMonth.getFullYear(), nextMonth.getMonth(), i - startDay - endDay + 1);
+      }
+
+      const dateString = date.toISOString().slice(0, 10);
+      this.weeks[Math.floor(i / 7)] = this.weeks[Math.floor(i / 7)] || [];
+      this.weeks[Math.floor(i / 7)].push({
+        date: dateString,
+        day: date.getDate()
+      });
+    }
+  }
+
+  previousMonth() {
+    this.currentMonth = new Date(this.currentMonth.getFullYear(), this.currentMonth.getMonth() - 1);
+    this.generateCalendar();
+  }
   
-  public currentMonth: string;
-  public weekdays: string[];
-  public calendarDays: CalendarDay[];
-
-  constructor() {
-    const today = new Date();
-    this.currentMonth = this.getMonthName(today.getMonth()) + ' ' + today.getFullYear();
-    this.weekdays = ['Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb'];
-    this.calendarDays = this.generateCalendarDays(today.getFullYear(), today.getMonth());
-   }
-   
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
+  nextMonth() {
+    this.currentMonth = new Date(this.currentMonth.getFullYear(), this.currentMonth.getMonth() + 1);
+    this.generateCalendar();
   }
 
-   private getMonthName(month: number): string {
-    const monthNames = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
-    return monthNames[month];
+  hasActivity(date: string): boolean {
+    return this.activities.some(activity => activity.date === date);
   }
 
-  private generateCalendarDays(year: number, month: number): CalendarDay[] {
-    const days: CalendarDay[] = [];
-
-    const firstDayOfMonth = new Date(year, month, 1);
-    const lastDayOfMonth = new Date(year, month + 1, 0);
-
-    for (let i = 1; i <= lastDayOfMonth.getDate(); i++) {
-      const currentDate = new Date(year, month, i);
-      const calendarDay: CalendarDay = {
-        date: i
-      };
-
-      // Aquí puedes agregar lógica adicional para obtener las actividades correspondientes a cada día
-      // y asignarlas a la propiedad 'event' del objeto 'calendarDay'
-
-      days.push(calendarDay);
+  showDescription(day: CalendarDay) {
+    const activity = this.activities.find(activity => activity.date === day.date);
+    if (activity) {
+      this.description = activity.description;
+      this.descriptionVisible = true;
     }
-
-    const daysFromPreviousMonth = firstDayOfMonth.getDay();
-    const daysFromNextMonth = 6 - lastDayOfMonth.getDay();
-
-    for (let i = 0; i < daysFromPreviousMonth; i++) {
-      const currentDate = new Date(year, month, -i);
-      const calendarDay: CalendarDay = {
-        date: currentDate.getDate()
-      };
-
-      days.unshift(calendarDay);
-    }
-
-    for (let i = 1; i <= daysFromNextMonth; i++) {
-      const currentDate = new Date(year, month + 1, i);
-      const calendarDay: CalendarDay = {
-        date: currentDate.getDate()
-      };
-
-      days.push(calendarDay);
-    }
-
-    return days;
   }
 
-  public previousMonth(): void {
-    // Lógica para mostrar el mes anterior
-    // Puedes implementarla según tus necesidades
-  }
-
-  public nextMonth(): void {
-    // Lógica para mostrar el mes siguiente
-    // Puedes implementarla según tus necesidades
-  }
-
-  public hasEvent(day: CalendarDay): boolean {
-    return day.event !== undefined;
+  hideDescription() {
+    this.descriptionVisible = false;
   }
 
 }

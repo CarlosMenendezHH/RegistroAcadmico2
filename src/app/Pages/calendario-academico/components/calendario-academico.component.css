@@ -1,58 +1,32 @@
 .calendar {
-    width: 300px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 10px;
-  }
-  
-  .weekdays {
-    display: flex;
-    margin-bottom: 10px;
-  }
-  
-  .weekday {
-    flex: 1;
-    text-align: center;
-    font-weight: bold;
-  }
-  
-  .days {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 5px;
-  }
-  
-  .day {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: 1px solid #ccc;
-    padding: 5px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .day.event {
-    background-color: lightblue;
-  }
-  
-  .number {
-    font-size: 18px;
-    margin-bottom: 5px;
-  }
-  
-  .event-details {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: white;
-    padding: 5px;
-    border-radius: 5px;
-  }
+  margin-bottom: 20px;
+}
+
+.calendar-header {
+  font-size: 20px;
+}
+
+.calenda {
+  margin-top: 10px;
+}
+
+.calendar-day {
+  padding: 5px;
+}
+
+.event-day {
+  background-color: yellow;
+  cursor: pointer;
+}
+
+.description-popup {
+  position: absolute;
+  background-color: white;
+  border: 1px solid gray;
+  padding: 10px;
+  display: none;
+}
+
+.description-popup.show {
+  display: block;
+}

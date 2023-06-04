@@ -1,22 +1,20 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { notasAcademicas } from '../models/notasAcademicas';
+import { usuario } from '../models/Usuario';
 import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
-export class NotasService {
+export class UsuarioService {
+  private url: string = `${environment.Host}/usuarios/MH100320`;
 
-  private url: string = `${environment.Host}/notas/MH100320`;
-
-  private url2: string = `${environment.Host}/notas/MH100320`
-  constructor(private http: HttpClient) {  }
+  constructor(private http: HttpClient) { }
 
   findAll(){
     const headers = this.getHeaders();
-    return this.http.get<notasAcademicas[]>(this.url, { headers }).pipe(
+    return this.http.get<usuario[]>(this.url, { headers }).pipe(
       map(response => {
         if (Array.isArray(response)) {
           return response;
